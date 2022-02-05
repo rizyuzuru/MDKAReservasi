@@ -70,6 +70,13 @@ namespace MDKAReservasi.Service
             dt = mapper.GetDataRuangan().Tables[0];
             return dataTableToJson(dt);
         }
+        [WebMethod]
+        public string getDataRuanganByTanggal(string dateparam)
+        {
+            DataTable dt = new DataTable();
+            dt = mapper.GetDataRuanganByTanggal(dateparam).Tables[0];
+            return dataTableToJson(dt);
+        }
         public string dataTableToJson(DataTable dt)
         {
             JavaScriptSerializer jsSerializer = new JavaScriptSerializer();

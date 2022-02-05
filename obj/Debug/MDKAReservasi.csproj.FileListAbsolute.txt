@@ -53,6 +53,7 @@ C:\Users\KPN - FARIZ\source\repos\MDKAReservasi\bin\roslyn\VBCSCompiler.exe.conf
 C:\Users\KPN - FARIZ\source\repos\MDKAReservasi\bin\Antlr3.Runtime.dll
 C:\Users\KPN - FARIZ\source\repos\MDKAReservasi\bin\AspNet.ScriptManager.bootstrap.dll
 C:\Users\KPN - FARIZ\source\repos\MDKAReservasi\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\KPN - FARIZ\source\repos\MDKAReservasi\bin\Microsoft.ApplicationBlocks.Data.dll
 C:\Users\KPN - FARIZ\source\repos\MDKAReservasi\bin\Microsoft.AspNet.FriendlyUrls.dll
 C:\Users\KPN - FARIZ\source\repos\MDKAReservasi\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
 C:\Users\KPN - FARIZ\source\repos\MDKAReservasi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
@@ -67,9 +68,7 @@ C:\Users\KPN - FARIZ\source\repos\MDKAReservasi\bin\Newtonsoft.Json.xml
 C:\Users\KPN - FARIZ\source\repos\MDKAReservasi\bin\Antlr3.Runtime.pdb
 C:\Users\KPN - FARIZ\source\repos\MDKAReservasi\bin\Microsoft.AspNet.FriendlyUrls.xml
 C:\Users\KPN - FARIZ\source\repos\MDKAReservasi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\KPN - FARIZ\source\repos\MDKAReservasi\obj\Debug\MDKAReservasi.csprojAssemblyReference.cache
 C:\Users\KPN - FARIZ\source\repos\MDKAReservasi\obj\Debug\MDKAReservasi.csproj.CoreCompileInputs.cache
 C:\Users\KPN - FARIZ\source\repos\MDKAReservasi\obj\Debug\MDKAReservasi.csproj.CopyComplete
 C:\Users\KPN - FARIZ\source\repos\MDKAReservasi\obj\Debug\MDKAReservasi.dll
 C:\Users\KPN - FARIZ\source\repos\MDKAReservasi\obj\Debug\MDKAReservasi.pdb
-C:\Users\KPN - FARIZ\source\repos\MDKAReservasi\bin\Microsoft.ApplicationBlocks.Data.dll

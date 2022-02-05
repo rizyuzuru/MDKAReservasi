@@ -12,7 +12,7 @@
  Target Server Version : 14001000
  File Encoding         : 65001
 
- Date: 04/02/2022 17:34:16
+ Date: 05/02/2022 21:56:55
 */
 
 
@@ -46,10 +46,10 @@ GO
 SET IDENTITY_INSERT [dbo].[tblM_Ruangan] ON
 GO
 
-INSERT INTO [dbo].[tblM_Ruangan] ([Ruangan_PK], [NamaRuangan], [Lantai], [DayaTampung], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate], [Status_FK]) VALUES (N'1', N'101', N'1', N'200', N'SYSTEM', N'2019-01-01 00:00:00.000', N'SYSTEM', N'2019-01-01 00:00:00.000', N'1')
+INSERT INTO [dbo].[tblM_Ruangan] ([Ruangan_PK], [NamaRuangan], [Lantai], [DayaTampung], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate], [Status_FK]) VALUES (N'1', N'101', N'1', N'200', N'SYSTEM', N'2019-01-01 00:00:00.000', N'SYSTEM', N'2019-01-01 00:00:00.000', N'2')
 GO
 
-INSERT INTO [dbo].[tblM_Ruangan] ([Ruangan_PK], [NamaRuangan], [Lantai], [DayaTampung], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate], [Status_FK]) VALUES (N'2', N'201', N'2', N'25', N'SYSTEM', N'2019-01-01 00:00:00.000', N'SYSTEM', N'2019-01-01 00:00:00.000', N'1')
+INSERT INTO [dbo].[tblM_Ruangan] ([Ruangan_PK], [NamaRuangan], [Lantai], [DayaTampung], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate], [Status_FK]) VALUES (N'2', N'201', N'2', N'25', N'SYSTEM', N'2019-01-01 00:00:00.000', N'SYSTEM', N'2019-01-01 00:00:00.000', N'2')
 GO
 
 INSERT INTO [dbo].[tblM_Ruangan] ([Ruangan_PK], [NamaRuangan], [Lantai], [DayaTampung], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate], [Status_FK]) VALUES (N'3', N'202', N'2', N'50', N'SYSTEM', N'2019-01-01 00:00:00.000', N'SYSTEM', N'2019-01-01 00:00:00.000', N'2')
@@ -61,7 +61,7 @@ GO
 INSERT INTO [dbo].[tblM_Ruangan] ([Ruangan_PK], [NamaRuangan], [Lantai], [DayaTampung], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate], [Status_FK]) VALUES (N'5', N'204', N'2', N'100', N'SYSTEM', N'2019-01-01 00:00:00.000', N'SYSTEM', N'2019-01-01 00:00:00.000', N'3')
 GO
 
-INSERT INTO [dbo].[tblM_Ruangan] ([Ruangan_PK], [NamaRuangan], [Lantai], [DayaTampung], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate], [Status_FK]) VALUES (N'6', N'301', N'3', N'50', N'SYSTEM', N'2019-01-01 00:00:00.000', N'SYSTEM', N'2019-01-01 00:00:00.000', N'2')
+INSERT INTO [dbo].[tblM_Ruangan] ([Ruangan_PK], [NamaRuangan], [Lantai], [DayaTampung], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate], [Status_FK]) VALUES (N'6', N'301', N'3', N'50', N'SYSTEM', N'2019-01-01 00:00:00.000', N'SYSTEM', N'2019-01-01 00:00:00.000', N'1')
 GO
 
 INSERT INTO [dbo].[tblM_Ruangan] ([Ruangan_PK], [NamaRuangan], [Lantai], [DayaTampung], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate], [Status_FK]) VALUES (N'7', N'302', N'3', N'50', N'SYSTEM', N'2019-01-01 00:00:00.000', N'SYSTEM', N'2019-01-01 00:00:00.000', N'2')
@@ -160,10 +160,7 @@ GO
 SET IDENTITY_INSERT [dbo].[tblT_Reservasi] ON
 GO
 
-INSERT INTO [dbo].[tblT_Reservasi] ([Reservasi_PK], [Ruangan_FK], [SubjectReservasi], [TanggalReservasi], [JamMulai], [JamSelesai], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (N'1', N'1', N'Meeting Proyek', N'2022-02-02', N'08:45:00.0000000', N'10:00:00.0000000', N'SYSTEM', N'2022-02-04 16:45:33.257', N'SYSTEM', N'2022-02-04 16:45:33.257')
-GO
-
-INSERT INTO [dbo].[tblT_Reservasi] ([Reservasi_PK], [Ruangan_FK], [SubjectReservasi], [TanggalReservasi], [JamMulai], [JamSelesai], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (N'2', N'2', N'Meetin Supervisi', N'2022-02-01', N'09:46:00.0000000', N'11:46:00.0000000', N'SYSTEM', N'2022-02-04 16:46:27.410', N'SYSTEM', N'2022-02-04 16:46:27.410')
+INSERT INTO [dbo].[tblT_Reservasi] ([Reservasi_PK], [Ruangan_FK], [SubjectReservasi], [TanggalReservasi], [JamMulai], [JamSelesai], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (N'1002', N'6', N'Meetin Supervisi', N'2022-02-01', N'22:22:00.0000000', N'12:22:00.0000000', N'SYSTEM', N'2022-02-05 20:23:06.510', N'SYSTEM', N'2022-02-05 20:23:06.510')
 GO
 
 SET IDENTITY_INSERT [dbo].[tblT_Reservasi] OFF
@@ -213,14 +210,24 @@ BEGIN
 	where a.status_FK = 1
 	END
 	else if @function = 3
-	BEGIN
-	BEGIN
-	
-	delete from tblT_Reservasi where Reservasi_PK = @Reservasi_PK
-	
+	BEGIN		
+	delete from tblT_Reservasi where Reservasi_PK = @Reservasi_PK	
 	update tblM_Ruangan set Status_FK = 2 where Ruangan_PK = @Ruangan_FK	
-
 	END
+	else if @function = 4
+	BEGIN
+	select * from tblM_Ruangan where Status_FK = 2	
+	END	
+	else if @function = 5
+	BEGIN
+	select a.NamaRuangan, a.Reservasi_PK, a.Ruangan_PK, a.SubjectReservasi, a.tanggalReservasi,a.Status_FK, case when a.Status_FK = 1 then 'Booked' when a.Status_FK = 2 then 'Vacant' when a.Status_FK = 3 then  'Renovasi' end as namaStatus from (
+		select a.namaRuangan, b.Reservasi_PK, a.Ruangan_PK ,b.subjectReservasi, CAST(b.tanggalReservasi as varchar(10))tanggalReservasi, CAST(b.jamMulai as varchar(10))jamMulai, CAST(b.jamSelesai as varchar(10))jamSelesai, a.status_FK  from tblM_ruangan a
+		LEFT JOIN tblT_Reservasi b
+		on a.Ruangan_PK = b.Ruangan_FK
+	)a
+		
+
+	--select * from tblT_Reservasi
 	END
 
 END
@@ -230,7 +237,7 @@ GO
 -- ----------------------------
 -- Auto increment value for tblM_Ruangan
 -- ----------------------------
-DBCC CHECKIDENT ('[dbo].[tblM_Ruangan]', RESEED, 13)
+DBCC CHECKIDENT ('[dbo].[tblM_Ruangan]', RESEED, 1000)
 GO
 
 
@@ -246,7 +253,7 @@ GO
 -- ----------------------------
 -- Auto increment value for tblM_Status
 -- ----------------------------
-DBCC CHECKIDENT ('[dbo].[tblM_Status]', RESEED, 3)
+DBCC CHECKIDENT ('[dbo].[tblM_Status]', RESEED, 1000)
 GO
 
 
@@ -262,7 +269,7 @@ GO
 -- ----------------------------
 -- Auto increment value for tblT_Reservasi
 -- ----------------------------
-DBCC CHECKIDENT ('[dbo].[tblT_Reservasi]', RESEED, 2)
+DBCC CHECKIDENT ('[dbo].[tblT_Reservasi]', RESEED, 1002)
 GO
 
 

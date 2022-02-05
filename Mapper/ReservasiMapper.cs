@@ -45,6 +45,12 @@ namespace MDKAReservasi.Mapper
             p_function.Value = 4;            
             return SqlHelper.ExecuteDataset(ConnectionReservasi.connectionString, CommandType.StoredProcedure, "SP_ProsesReservasi", p_function);
         }
+        public DataSet GetDataRuanganByTanggal(string tanggal)
+        {
+            p_function.Value = 5;
+            p_dateReservasi.Value = tanggal;
+            return SqlHelper.ExecuteDataset(ConnectionReservasi.connectionString, CommandType.StoredProcedure, "SP_ProsesReservasi", p_function,p_dateReservasi);
+        }
     }
     
 }
