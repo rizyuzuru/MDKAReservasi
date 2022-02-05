@@ -40,6 +40,11 @@ namespace MDKAReservasi.Mapper
             p_RuanganFK.Value = PK_Ruangan;
              SqlHelper.ExecuteNonQuery(ConnectionReservasi.connectionString, CommandType.StoredProcedure, "SP_ProsesReservasi", p_function, p_PKTransaksi, p_RuanganFK);
         }
+        public DataSet GetDataRuangan()
+        {
+            p_function.Value = 4;            
+            return SqlHelper.ExecuteDataset(ConnectionReservasi.connectionString, CommandType.StoredProcedure, "SP_ProsesReservasi", p_function);
+        }
     }
     
 }

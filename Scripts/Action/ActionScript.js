@@ -1,12 +1,13 @@
 ﻿$(document).ready(function () {
 
     setupTableReservasi();
-
-    $("#SaveButton").click(function () {
+    GetDataRuangan();
+    
+    $("#SaveButton").click(function () {        
         $.ajax({
             type: "POST",
             url: '../Service/ReservasiService.asmx/InsertReservasi',
-            data: "{'ruanganFK' :'" + $('#txtRuangan').val() + "','subject' :'" + $('#txtSubject').val() + "','tanggalReservasi' :'" + $("#tanggal").val() + "','jamMulai':'" + $("#txtJamMulai").val() + "','jamSelesai':'" + $("#txtJamSelesai").val() + "'}",
+            data: "{'ruanganFK' :'" + $('#selectRuangan').val() + "','subject' :'" + $('#txtSubject').val() + "','tanggalReservasi' :'" + $("#tanggal").val() + "','jamMulai':'" + $("#txtJamMulai").val() + "','jamSelesai':'" + $("#txtJamSelesai").val() + "'}",
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success: function (data) {
@@ -61,7 +62,7 @@
 
 });
 function HapusReservasi(pkReservasi, pkRuangan) {
-    
+
     $.ajax({
         type: "POST",
         url: '../Service/ReservasiService.asmx/DeleteReservasi',
@@ -70,6 +71,24 @@ function HapusReservasi(pkReservasi, pkRuangan) {
         dataType: "json",
         success: function (data) {
             location.reload();
+        }
+    })
+}
+function GetDataRuangan() {
+
+    $.ajax({
+        type: "POST",
+        url: '../Service/ReservasiService.asmx/getAllRuangan',        
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (data) {
+            var jsonRuangan = JSON.parse(data.d);
+            for (var i = 0; i < jsonRuangan.length; i++) {
+                console.log('nama ruangan = ' + jsonRuangan[i]["NamaRuangan"])
+                console.log('nama ruangan = ' + jsonRuangan[i]["Ruangan_PK"])
+                $('#selectRuangan').append($('<option></option>').val(jsonRuangan[i]["Ruangan_PK"]).html(jsonRuangan[i]["NamaRuangan"]));
+
+            }
         }
     })
 }

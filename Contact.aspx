@@ -38,7 +38,10 @@
                     <form>
                         <div class="form-group">
                             <label for="txtRuangan" class="col-form-label">Ruangan</label>
-                            <input type="text" class="form-control" id="txtRuangan">
+                            <%--<input type="text" class="form-control" id="txtRuangan">--%>
+                            <select id="selectRuangan" class="browser-default custom-select">
+
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="txtSubject" class="col-form-label">Subject</label>

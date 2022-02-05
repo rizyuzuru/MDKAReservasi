@@ -63,6 +63,13 @@ namespace MDKAReservasi.Service
             }
             return status;
         }
+        [WebMethod]
+        public string getAllRuangan()
+        {
+            DataTable dt = new DataTable();
+            dt = mapper.GetDataRuangan().Tables[0];
+            return dataTableToJson(dt);
+        }
         public string dataTableToJson(DataTable dt)
         {
             JavaScriptSerializer jsSerializer = new JavaScriptSerializer();
