@@ -72,3 +72,4 @@ C:\Users\KPN - FARIZ\source\repos\MDKAReservasi\obj\Debug\MDKAReservasi.csproj.C
 C:\Users\KPN - FARIZ\source\repos\MDKAReservasi\obj\Debug\MDKAReservasi.csproj.CopyComplete
 C:\Users\KPN - FARIZ\source\repos\MDKAReservasi\obj\Debug\MDKAReservasi.dll
 C:\Users\KPN - FARIZ\source\repos\MDKAReservasi\obj\Debug\MDKAReservasi.pdb
+C:\Users\KPN - FARIZ\source\repos\MDKAReservasi\obj\Debug\MDKAReservasi.csprojAssemblyReference.cache

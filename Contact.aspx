@@ -3,6 +3,10 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <center><h2>List Reservasi</h2></center>
     <!-- Button trigger modal -->
+    <div class="input-group date" id="divTanggal" data-provide="datepicker">
+        <label for="tanggal" class="col-form-label">Tanggal</label>
+        <input type="date" class="form-control" id="tanggal">
+    </div>
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
         Tambah Data Reservasi
     </button>
@@ -40,16 +44,11 @@
                             <label for="txtRuangan" class="col-form-label">Ruangan</label>
                             <%--<input type="text" class="form-control" id="txtRuangan">--%>
                             <select id="selectRuangan" class="browser-default custom-select">
-
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="txtSubject" class="col-form-label">Subject</label>
                             <input type="text" class="form-control" id="txtSubject">
-                        </div>
-                        <div class="input-group date" id="divTanggal" data-provide="datepicker">
-                            <label for="tanggal" class="col-form-label">Tanggal</label>
-                            <input type="date" class="form-control" id="tanggal">
                         </div>
                         <div class="form-group">
                             <label for="recipient-name" class="col-form-label">Jam Mulai</label>

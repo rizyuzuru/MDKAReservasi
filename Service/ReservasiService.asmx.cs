@@ -41,10 +41,10 @@ namespace MDKAReservasi.Service
             }
         }
         [WebMethod]
-        public string getAllReservasi()
+        public string getAllReservasi(string tanggal)
         {
             DataTable dt = new DataTable();
-            dt = mapper.GetAllReservasi().Tables[0];
+            dt = mapper.GetAllReservasi(tanggal).Tables[0];
             return dataTableToJson(dt);
         }
         [WebMethod]
@@ -64,10 +64,10 @@ namespace MDKAReservasi.Service
             return status;
         }
         [WebMethod]
-        public string getAllRuangan()
+        public string getAllRuangan(string tanggal)
         {
             DataTable dt = new DataTable();
-            dt = mapper.GetDataRuangan().Tables[0];
+            dt = mapper.GetDataRuangan(tanggal).Tables[0];
             return dataTableToJson(dt);
         }
         [WebMethod]

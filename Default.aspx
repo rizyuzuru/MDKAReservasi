@@ -16,7 +16,7 @@
                     </div>
                 </div>
                 <div class="input-group date" id="divTanggal" data-provide="datepicker">
-                    <label for="tanggal" class="col-form-label">Tanggal</label>
+                    <label for="tanggal" class="col-form-label">Filter data ruangan</label>
                     <input type="date" class="form-control" id="tanggalHome">
                 </div>
                 <div class="box-body">

@@ -1,7 +1,5 @@
 ﻿$(document).ready(function () {
-
-    setupTableReservasi();
-    GetDataRuangan();
+     
     $("#SaveButton").click(function () {
         $.ajax({
             type: "POST",
@@ -17,13 +15,19 @@
     $("#tanggalHome").change(function () {
         setupTableRuanganHome();
     });
+    $("#tanggal").change(function () {
+        GetDataRuangan();
+        setupTableReservasi();
+    });
 
     function setupTableReservasi() {
         var content = "";
+        $("#boxIndex").html("");
         $.ajax({
             type: 'POST',
             url: '../Service/ReservasiService.asmx/getAllReservasi',
-            contentType: 'application/json; charset=utf-8',
+            data: "{'tanggal' :'" + $("#tanggal").val() + "'}",
+            contentType: "application/json; charset=utf-8",
             dataType: 'json',
             success: function (response) {
                 var jsonReservasiData = JSON.parse(response.d);
@@ -55,9 +59,7 @@
 
             },
             error: function (xhr, ajaxOptions, thrownError) {
-                showToast('gagal');
-                console.log("function get list monthly report : " + xhr.statusText);
-                $(".loading").hide();
+
             }
         });
     }
@@ -77,10 +79,11 @@ function HapusReservasi(pkReservasi, pkRuangan) {
     })
 }
 function GetDataRuangan() {
-
+    $('#selectRuangan option').remove();
     $.ajax({
         type: "POST",
         url: '../Service/ReservasiService.asmx/getAllRuangan',
+        data: "{'tanggal' :'" + $("#tanggal").val() + "'}",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (data) {
@@ -88,7 +91,10 @@ function GetDataRuangan() {
             for (var i = 0; i < jsonRuangan.length; i++) {
                 console.log('nama ruangan = ' + jsonRuangan[i]["NamaRuangan"])
                 console.log('nama ruangan = ' + jsonRuangan[i]["Ruangan_PK"])
-                $('#selectRuangan').append($('<option></option>').val(jsonRuangan[i]["Ruangan_PK"]).html(jsonRuangan[i]["NamaRuangan"]));
+                if (jsonRuangan[i]["Status_FK"] == 2) {
+                    console.log('sudah di booking=' + jsonRuangan[i]["NamaRuangan"])
+                    $('#selectRuangan').append($('<option></option>').val(jsonRuangan[i]["Ruangan_PK"]).html(jsonRuangan[i]["NamaRuangan"]));
+                }
 
             }
         }

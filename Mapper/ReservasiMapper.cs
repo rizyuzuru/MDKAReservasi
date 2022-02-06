@@ -28,10 +28,11 @@ namespace MDKAReservasi.Mapper
             p_jamSelesai.Value = jamSelesai;
             return SqlHelper.ExecuteDataset(ConnectionReservasi.connectionString, CommandType.StoredProcedure, "SP_ProsesReservasi", p_function, p_RuanganFK, p_subject, p_dateReservasi, p_jamMulai, p_jamSelesai);
         }
-        public DataSet GetAllReservasi()
+        public DataSet GetAllReservasi(string tanggal)
         {
-            p_function.Value = 2;            
-            return SqlHelper.ExecuteDataset(ConnectionReservasi.connectionString, CommandType.StoredProcedure, "SP_ProsesReservasi", p_function);
+            p_function.Value = 2;
+            p_dateReservasi.Value = tanggal;
+            return SqlHelper.ExecuteDataset(ConnectionReservasi.connectionString, CommandType.StoredProcedure, "SP_ProsesReservasi", p_function, p_dateReservasi) ;
         }
         public void DeleteReservasi(int PK_Transaksi, int PK_Ruangan)
         {
@@ -40,10 +41,11 @@ namespace MDKAReservasi.Mapper
             p_RuanganFK.Value = PK_Ruangan;
              SqlHelper.ExecuteNonQuery(ConnectionReservasi.connectionString, CommandType.StoredProcedure, "SP_ProsesReservasi", p_function, p_PKTransaksi, p_RuanganFK);
         }
-        public DataSet GetDataRuangan()
+        public DataSet GetDataRuangan(string tanggal)
         {
-            p_function.Value = 4;            
-            return SqlHelper.ExecuteDataset(ConnectionReservasi.connectionString, CommandType.StoredProcedure, "SP_ProsesReservasi", p_function);
+            p_function.Value = 4;
+            p_dateReservasi.Value = tanggal;
+            return SqlHelper.ExecuteDataset(ConnectionReservasi.connectionString, CommandType.StoredProcedure, "SP_ProsesReservasi", p_function,p_dateReservasi);
         }
         public DataSet GetDataRuanganByTanggal(string tanggal)
         {
